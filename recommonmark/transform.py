@@ -315,7 +315,7 @@ class AutoStructify(transforms.Transform):
                                 current_cell += e
                 elif len(elements) == 1:
                     current_cell += elements[0]
-                 if stripped_child.endswith('|') and not stripped_child.startswith('|') and current_cell:
+                    if stripped_child.endswith('|') and not stripped_child.startswith('|') and current_cell:
                     # If the line ends with | it means the previous cell is finished -> Append it to current row
                     current_row.append(current_cell)
                     current_cell = ''
