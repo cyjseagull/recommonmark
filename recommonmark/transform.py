@@ -316,9 +316,9 @@ class AutoStructify(transforms.Transform):
                 elif len(elements) == 1:
                     current_cell += elements[0]
                     if stripped_child.endswith('|') and not stripped_child.startswith('|') and current_cell:
-                    # If the line ends with | it means the previous cell is finished -> Append it to current row
-                    current_row.append(current_cell)
-                    current_cell = ''
+                        # If the line ends with | it means the previous cell is finished -> Append it to current row
+                        current_row.append(current_cell)
+                        current_cell = ''
             elif isinstance(child, nodes.reference):
                 # Convert reference to rst reference
                 current_cell += ' `' + child.attributes['name'] + ' <' + child.attributes['refuri'] + '>`_ '
