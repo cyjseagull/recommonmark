@@ -387,7 +387,7 @@ class AutoStructify(transforms.Transform):
             newnode = self.auto_code_block(node)
         elif isinstance(node, nodes.literal):
             newnode = self.auto_inline_code(node)
-        elif isinstance(node, nodes.paragraph) and node.rawsource.startswith('|') and node.rawsource.endswith('|'):
+        elif isinstance(node, nodes.paragraph) and node.rawsource and node.rawsource.startswith('|') and node.rawsource.endswith('|'):
             newnode = self.table_extension(node)
         return newnode
 
