@@ -278,11 +278,11 @@ class AutoStructify(transforms.Transform):
             string_type = str
         else:
             string_type = basestring
-         original_node = node
-         rows = []
+        original_node = node
+        rows = []
         max_width = 0
         max_cells = 0
-         current_row = []
+        current_row = []
         current_cell = ''
         for child in node.children:
             if child == '\n':
@@ -302,7 +302,7 @@ class AutoStructify(transforms.Transform):
                     # If the line starts with | it means the previous cell is finished -> Append it to current row
                     current_row.append(current_cell)
                     current_cell = ''
-                 elements = stripped_child.split('|')
+                elements = stripped_child.split('|')
                 if len(elements) > 1:
                     for i in range(len(elements)):
                         e = elements[i]
@@ -364,7 +364,7 @@ class AutoStructify(transforms.Transform):
         self.state_machine.state.nested_parse(
             StringList(rst_lines, source=original_node.source),
             0, node=node, match_titles=False)
-         return node.children[:]
+        return node.children[:]
 
     def find_replace(self, node):
         """Try to find replace node for current node.
