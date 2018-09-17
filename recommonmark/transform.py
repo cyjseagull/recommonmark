@@ -360,7 +360,7 @@ class AutoStructify(transforms.Transform):
         self.state_machine.reset(self.document,
                                  node.parent,
                                  self.current_level)
-         node = nodes.section()
+        node = nodes.section()
         self.state_machine.state.nested_parse(
             StringList(rst_lines, source=original_node.source),
             0, node=node, match_titles=False)
