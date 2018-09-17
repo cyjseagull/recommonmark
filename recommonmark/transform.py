@@ -296,7 +296,7 @@ class AutoStructify(transforms.Transform):
                 # Finally append line and reset it
                 rows.append(current_row)
                 current_row = []
-             elif isinstance(child, string_type):
+            elif isinstance(child, string_type):
                 stripped_child = child.strip()
                 if stripped_child.startswith('|') and current_cell:
                     # If the line starts with | it means the previous cell is finished -> Append it to current row
@@ -319,7 +319,7 @@ class AutoStructify(transforms.Transform):
                     # If the line ends with | it means the previous cell is finished -> Append it to current row
                     current_row.append(current_cell)
                     current_cell = ''
-             elif isinstance(child, nodes.reference):
+            elif isinstance(child, nodes.reference):
                 # Convert reference to rst reference
                 current_cell += ' `' + child.attributes['name'] + ' <' + child.attributes['refuri'] + '>`_ '
             elif isinstance(child, sphinx.addnodes.pending_xref):
